@@ -27,6 +27,7 @@ const links = [
 function MainHeader() {
   return (
     <div className={styles.container}>
+      <div className={styles.area}></div>
       <div className={styles.nav1}>
       <Link href="/" className={styles.logo}>
         MyService

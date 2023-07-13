@@ -1,5 +1,5 @@
 .container {
-  position: fixed;
+  position: absolute;
   width: 100%;
   left: 0;
   top: 0;
@@ -67,4 +67,24 @@
 .desc{
   font-size: 18px;
   font-weight: 300;
+}
+
+.card{
+  @apply bg-white h-[250px] rounded-xl shadow-lg border-[3px] border-gray-50 px-3 py-3
+}
+
+.bodycard{
+  @apply flex flex-col items-center 
+}
+
+.cardimg{
+  @apply w-[4.5rem] pb-4
+}
+
+.cardtitle{
+  @apply font-semibold text-2xl pb-2
+}
+
+.carddesc{
+  @apply text-lg
 }

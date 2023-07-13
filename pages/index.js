@@ -42,46 +42,54 @@ function HomePage() {
         </div>
       </div>
       <div class="grid grid-cols-4 gap-8 mt-32 w-[60%] mx-auto items-center text-center ">
-        <div class="bg-white h-[250px] rounded-xl shadow-lg border-[3px] border-gray-50">
-          <div className="w-16">
-            <Image src={Servericon} alt="server" />
-            <h2>3,xxx+ บริการในระบบ</h2>
-            <p>
+        <div class={classes.card}>
+          <div className={classes.bodycard}>
+            <Image src={Servericon} alt="server" className={classes.cardimg}/>
+            <h2 className={classes.cardtitle}>3,xxx+ บริการในระบบ</h2>
+            <p className={classes.carddesc}>
               เรามีคู่ค้าและเซิพเวอร์ในระบบมากถึง 3,xxx+ บริการ
               ตอบโจทย์ทุกรูปแบบ ประเภทบริการ
             </p>
           </div>
         </div>
-        <div class="bg-white h-[250px] rounded-xl shadow-lg border-[3px] border-gray-50">
-          <div>
-            <Image src={Walleticon} alt="server" />
-            <h2>มีทีมงานช่วยเหลือ</h2>
-            <p>
+        <div class={classes.card}>
+          <div className={classes.bodycard}>
+            <Image src={Walleticon} alt="server" className={classes.cardimg} />
+            <h2 className={classes.cardtitle}>มีทีมงานช่วยเหลือ</h2>
+            <p className={classes.carddesc}>
               ราคาสุดพิเศษเพื่อคุณเริ่มต้นเพียง 0.01 บาท ก็สามารถดำเนินการได้
               ราคานี้แค่คุณเท่านั้น
             </p>
           </div>
         </div>
-        <div class="bg-white h-[250px] rounded-xl shadow-lg border-[3px] border-gray-50">
-          <div>
-            <Image src={helpdeskicon} alt="server" />
-            <h2>ปลอดภัย 100%</h2>
-            <p>
+        <div class={classes.card}>
+          <div className={classes.bodycard}>
+            <Image src={helpdeskicon} alt="server" className={classes.cardimg} />
+            <h2 className={classes.cardtitle}>ปลอดภัย 100%</h2>
+            <p className={classes.carddesc}>
               ติดต่อสอบถามได้ 24 ชั่วโมง
               เรามีทีมงานคอยให้คำแนะนำและประสานงานกับเซิพเวอร์ที่ใช้งาน
             </p>
           </div>
         </div>
-        <div class="bg-white h-[250px] rounded-xl shadow-lg border-[3px] border-gray-50">
-          <div>
-            <Image src={Socialicon} alt="server" />
-            <h2>3,xxx+ บริการในระบบ</h2>
-            <p>
+        <div class={classes.card}>
+          <div className={classes.bodycard}>
+            <Image src={Socialicon} alt="server" className={classes.cardimg} />
+            <h2 className={classes.cardtitle} >3,xxx+ บริการในระบบ</h2>
+            <p className={classes.carddesc}>
               เป็นความลับ ทุกบริการปลอดภัย และมีประสิทธิภาพ
               ให้คุณได้เลือกใช้ได้อย่างไม่จำกัด
             </p>
           </div>
         </div>
+      </div>
+      <div className="w-[50%] bg-white h-[100px] mx-auto mt-16 shadow-lg rounded-2xl border-[3px] border-gray-50 flex items-center content-center justify-center">
+        <div className="justify-center text-center items-center">
+          <h1 className="font-bold text-4xl ">TOP Rated Services</h1>
+        </div>
+      </div>
+      <div className="w-[50%] bg-white h-[500px] mx-auto mt-16 shadow-lg  border-[3px] border-gray-50 flex items-center content-center justify-center mb-10">
+        
       </div>
     </div>
   );
