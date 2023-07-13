@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  padding-top: 15px;
+}
+
+.title {
+  @apply text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium
+}
+
+.btnlogin {
+  @apply bg-white hover:bg-blue-700 text-[#111724] py-0 px-4 border rounded
+}
