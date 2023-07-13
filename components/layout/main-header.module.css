@@ -1,14 +1,46 @@
-.container {
-  width: 100%;
+.container{
   position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
   z-index: 100;
-  padding-top: 15px;
+  color: white;
 }
 
-.title {
-  @apply text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium
+.nav1{
+  padding-top: 20px;
+
+  align-items: center;
+  height: 44px;
+  display: flex;
+  margin: auto;
+  z-index: 100;
+  right: 0;
+  left: 0;
+  top: 0;
+  position: fixed;
+  justify-content: space-around;
+  width: 80%;
 }
 
-.btnlogin {
-  @apply bg-white hover:bg-blue-700 text-[#111724] py-0 px-4 border rounded
+.logo{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.links{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logout{
+  padding: 5px;
+  border: none;
+  background-color: #53c28b;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  
+  
 }
