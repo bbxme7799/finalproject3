@@ -1,4 +1,4 @@
-.container{
+.container {
   position: fixed;
   width: 100%;
   left: 0;
@@ -7,11 +7,9 @@
   color: white;
 }
 
-.nav1{
+.nav1 {
   padding-top: 20px;
-
   align-items: center;
-  height: 44px;
   display: flex;
   margin: auto;
   z-index: 100;
@@ -23,35 +21,32 @@
   width: 80%;
 }
 
-.area{
+.area {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   height: 75px;
-  opacity: 0.5;
   z-index: 100;
-  background-color: #111;
+  background-color: #111724;
 }
 
-.logo{
+.logo {
   font-weight: bold;
   font-size: 22px;
 }
 
-.links{
+.links {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.logout{
+.logout {
   padding: 5px;
   border: none;
   background-color: #53c28b;
   color: white;
   cursor: pointer;
   border-radius: 3px;
-  
-  
 }

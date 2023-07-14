@@ -11,17 +11,17 @@ const links = [
   {
     id: 2,
     title: "Service",
-    url: "/table",
+    url: "/service-user",
   },
   {
     id: 3,
     title: "Blog",
-    url: "/bookshelf",
+    url: "/blog",
   },
   {
     id: 4,
     title: "FAQ",
-    url: "/rating",
+    url: "/faq",
   },
 ];
 function MainHeader() {
@@ -29,22 +29,19 @@ function MainHeader() {
     <div className={styles.container}>
       <div className={styles.area}></div>
       <div className={styles.nav1}>
-      <Link href="/" className={styles.logo}>
-        MyService
-      </Link>
-      <div className={styles.links}>
-        {links.map((link) => (
-          <Link key={link.id} href={link.url} className={styles.link}>
-            {link.title}
-          </Link>
-        ))}
-       
-      </div>
-      <button
-          className={styles.logout}
-        >
-          เข้าสู่ระบบ
-        </button>
+        <Link href="/" className={styles.logo}>
+          MyService
+        </Link>
+        <div className={styles.links}>
+          {links.map((link) => (
+            <Link key={link.id} href={link.url} className={styles.link}>
+              {link.title}
+            </Link>
+          ))}
+        </div>
+        <Link href="/users/login" passHref>
+          <button className={styles.logout}>เข้าสู่ระบบ</button>
+        </Link>
       </div>
     </div>
   );
