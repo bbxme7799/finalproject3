@@ -1,4 +1,4 @@
-export default function sidebar() {
+export default function Sidebar() {
   return (
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
       <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">

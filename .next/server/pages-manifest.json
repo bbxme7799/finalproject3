@@ -2,8 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/blog": "pages/blog.js",
-  "/faq": "pages/faq.js",
+  "/users": "pages/users.js",
   "/users/login": "pages/users/login.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/service-user": "pages/service-user.js",
+  "/blog": "pages/blog.js",
+  "/faq": "pages/faq.js"
 }
