@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./main-header.module.css";
 
 const links = [
@@ -28,7 +27,7 @@ function MainHeader() {
   return (
     <div className={styles.container}>
       <div className={styles.area}></div>
-      <div className={styles.nav1}>
+      <div className={styles.nav}>
         <Link href="/" className={styles.logo}>
           MyService
         </Link>

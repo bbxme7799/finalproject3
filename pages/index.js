@@ -1,13 +1,16 @@
-import classes from "./index.module.css";
+import classes from "../components/index.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Servericon from "../components/icons/server.png";
 import Walleticon from "../components/icons/wallet.png";
 import helpdeskicon from "../components/icons/help-desk.png";
 import Socialicon from "../components/icons/social-media.png";
-import ServiceList from "@/components/service-user/serivce-list";
+import ServiceList from "@/components/serviceTable/serivce-list";
 import bg from "../public/images/marketinglogo.png";
+import "primereact/resources/themes/lara-light-indigo/theme.css"; // theme
+import "primereact/resources/primereact.css"; // core css
+import Footer from "@/components/layout/footer";
 
 const HomePage = () => {
   const [serviceCards] = useState([
@@ -32,15 +35,14 @@ const HomePage = () => {
       desc: "เป็นความลับ ทุกบริการปลอดภัย และมีประสิทธิภาพ ให้คุณได้เลือกใช้ได้อย่างไม่จำกัด",
     },
   ]);
+
   return (
-    <div className={classes.container}>
+    <div className={`${classes.container} overflow-hidden`}>
       <div className={classes.body}></div>
       <div className={classes.position}>
         <div className={classes.banner}>
-          <div
-            className={`grid-flow-row-dense grid-cols-2 text-white z-50 flex gap-[90px] my-auto`}
-          >
-            <div className="col-span-2 w-[70%] ">
+          <div className="grid-flow-row-dense grid-cols-2 text-white z-50 flex gap-[90px] my-auto">
+            <div className="col-span-2 w-[70%]">
               <div className={classes.item}>
                 <h1 className={classes.title}>
                   เว็บปั้มวิว ปั้มไลค์ ปั้มใจ ปั้มผู้ติดตาม โปรโมท โฆษณา
@@ -48,7 +50,7 @@ const HomePage = () => {
                 </h1>
                 <p className={classes.desc}>
                   #1 บริการด้านการตลาดออนไลน์ SEO โซเชียลมีเดีย อันดับหนึ่ง
-                  ปั้มวิวฟรี ปั้มใจtiktok ปั้มไลค์ฟรี ปั้มผู้ติดตาม ปั้มฟอลโล
+                  ปั้มวิวฟรี ปั้มใจ tiktok ปั้มไลค์ฟรี ปั้มผู้ติดตาม ปั้มฟอลโล
                   ปั้มซับ ระบบสั่งซื้ออัตโนมัติ ใช้งานง่าย อยู่ที่ไหนก็ทำได้
                   24/7
                 </p>
@@ -67,7 +69,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-8 mt-32 w-[60%] mx-auto items-center text-center ">
+      <div className="flex flex-row gap-8 mt-32 w-[60%] mx-auto items-center text-center">
         {serviceCards.map((card, index) => (
           <div className={classes.card} key={index}>
             <div className={classes.bodycard}>
@@ -78,12 +80,13 @@ const HomePage = () => {
           </div>
         ))}
       </div>
-      <div className="w-[50%] bg-white h-[100px] mx-auto mt-16 shadow-lg rounded-2xl border-[3px] border-gray-50 flex items-center content-center justify-center">
-        <div className="justify-center text-center items-center">
-          <h1 className="font-bold text-4xl ">TOP Rated Services</h1>
-        </div>
+      <div className="w-[50%] bg-white h-[100px] mx-auto mt-16 shadow-lg rounded-2xl border-[3px] border-gray-50 flex items-center justify-center">
+        <h1 className="font-bold text-4xl">TOP Rated Services</h1>
       </div>
-      {/* <div className="w-[50%] bg-white h-[500px] mx-auto mt-16 shadow-lg  border-[3px] border-gray-50 flex items-center content-center justify-center mb-10"></div> */}
+      <div className="w-[50%] bg-white h-[500px] mx-auto mt-16 shadow-lg border-[3px] border-gray-50 flex items-center justify-center mb-10">
+        <ServiceList />
+      </div>
+      <Footer />
     </div>
   );
 };
