@@ -1,4 +1,4 @@
-import Sidebar from "../../components/layout/sidebar";
+import Sidebar from "@/components/layout/sidebar";
 export default function UserPage() {
-  return <Sidebar />;
+  return <div>{/* <Sidebar /> */}</div>;
 }

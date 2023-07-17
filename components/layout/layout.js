@@ -1,11 +1,24 @@
 import { Fragment } from "react";
 import MainHeader from "./main-header";
-
+import Sidebar from "../../components/layout/sidebar";
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 export default function Layout(props) {
+  const { data: session, status } = useSession();
+  console.log("🚀 ~ file: layout.js:9 ~ Layout ~ session:", session);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (status === "authenticated" && session) {
+      setIsLoggedIn(true);
+    }
+  }, [status, session]);
+
   return (
     <Fragment>
       {/* <div className="container"> */}
-      <MainHeader />
+      {isLoggedIn && <Sidebar />}
+      {!isLoggedIn && <MainHeader />}
       <main>{props.children}</main>
       {/* </div> */}
     </Fragment>

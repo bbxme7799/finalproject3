@@ -8,4 +8,10 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  callbacks: {
+    async session(session, user) {
+      session.user = user;
+      return session;
+    },
+  },
 });

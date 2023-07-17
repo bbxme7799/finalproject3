@@ -2,12 +2,12 @@ import classes from "../components/index.module.css";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Servericon from "../components/icons/server.png";
-import Walleticon from "../components/icons/wallet.png";
-import helpdeskicon from "../components/icons/help-desk.png";
-import Socialicon from "../components/icons/social-media.png";
+import Servericon from "@/components/icons/server.png";
+import Walleticon from "@/components/icons/wallet.png";
+import helpdeskicon from "@/components/icons/help-desk.png";
+import Socialicon from "@/components/icons/social-media.png";
 import ServiceList from "@/components/serviceTable/serivce-list";
-import bg from "../public/images/marketinglogo.png";
+import bg from "@/public/images/marketinglogo.png";
 import "primereact/resources/themes/lara-light-indigo/theme.css"; // theme
 import "primereact/resources/primereact.css"; // core css
 import Footer from "@/components/layout/footer";

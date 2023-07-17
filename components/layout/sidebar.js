@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Sidebar() {
   return (
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
@@ -15,8 +17,8 @@ export default function Sidebar() {
               </div>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/dashboard"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
                 <span class="inline-flex justify-center items-center ml-4">
@@ -38,7 +40,7 @@ export default function Sidebar() {
                 <span class="ml-2 text-sm tracking-wide truncate">
                   Dashboard
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <a
