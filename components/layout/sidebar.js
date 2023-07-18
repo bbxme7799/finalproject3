@@ -2,6 +2,10 @@ import { signOut } from "next-auth/react";
 import Link from "next/link";
 
 export default function Sidebar() {
+  const handleSignOut = () => {
+    signOut({ callbackUrl: '/' }) // เรียกใช้ signOut เมื่อมีการคลิกปุ่ม "ออกจากระบบ"
+  };
+
   return (
     <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
       <div className="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
@@ -44,7 +48,7 @@ export default function Sidebar() {
               </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
@@ -70,10 +74,10 @@ export default function Sidebar() {
                 <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-50 rounded-full">
                   New
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
@@ -96,10 +100,10 @@ export default function Sidebar() {
                 <span class="ml-2 text-sm tracking-wide truncate">
                   ประวัติฝากเครดิต
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
@@ -125,7 +129,7 @@ export default function Sidebar() {
                 <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">
                   1.2k
                 </span>
-              </a>
+              </Link>
             </li>
             <li class="px-5">
               <div class="flex flex-row items-center h-8">
@@ -135,7 +139,7 @@ export default function Sidebar() {
               </div>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
@@ -158,10 +162,10 @@ export default function Sidebar() {
                 <span class="ml-2 text-sm tracking-wide truncate">
                   ตั้งค่าข้อมูลส่วนตัว
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
@@ -187,7 +191,7 @@ export default function Sidebar() {
                 <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-green-500 bg-green-50 rounded-full">
                   15
                 </span>
-              </a>
+              </Link>
             </li>
             <li class="px-5">
               <div class="flex flex-row items-center h-8">
@@ -221,7 +225,7 @@ export default function Sidebar() {
               </a>
             </li> */}
             <li>
-              <a
+              <Link
                 href="#"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
@@ -250,10 +254,10 @@ export default function Sidebar() {
                 <span class="ml-2 text-sm tracking-wide truncate">
                   เงื่อนไขและข้อตกลง
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
@@ -274,9 +278,9 @@ export default function Sidebar() {
                   </svg>
                 </span>
                 <span class="ml-2 text-sm tracking-wide truncate">
-                  <button onClick={() => signOut()}>ออกจากระบบ</button>
+                  <button onClick={handleSignOut}>ออกจากระบบ</button>
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

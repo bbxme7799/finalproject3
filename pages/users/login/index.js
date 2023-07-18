@@ -14,10 +14,10 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  useEffect(() => {
-    setError(query.error || "");
-    setSuccess(query.success || "");
-  }, [query]);
+  // useEffect(() => {
+  //   setError(query.error || "");
+  //   setSuccess(query.success || "");
+  // }, [query]);
 
   if (session.status === "loading") {
     return <p>Loading...</p>;

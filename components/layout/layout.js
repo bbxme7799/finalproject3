@@ -5,7 +5,6 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 export default function Layout(props) {
   const { data: session, status } = useSession();
-  console.log("🚀 ~ file: layout.js:9 ~ Layout ~ session:", session);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
