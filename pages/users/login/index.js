@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import googleIcon from "../../../components/icons/google-iconlogin.png";
 import MetamaskIcon from "../../../components/icons/Metamaskiconlogin.png";
 import Image from "next/image";
 import { signIn } from "next-auth/react";
+import { useRouter, useSearchParams } from "next/router";
+import { useSession } from "next-auth/react";
 
 export default function LoginPage() {
-  const LoginHandler = () => {
-    signIn("google");
-  };
+  const session = useSession();
+  console.log("🚀 ~ file: index.js:11 ~ LoginPage ~ session:", session);
+  const router = useRouter();
+  const { query } = router;
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  useEffect(() => {
+    setError(query.error || "");
+    setSuccess(query.success || "");
+  }, [query]);
+
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
+  console.log("🚀 ~ file: index.js:11 ~ LoginPage ~ session:", session.status);
+
+  if (session.status === "authenticated") {
+    console.log(
+      "🚀 ~ file: index.js:11 ~ LoginPage ~ session:",
+      session.status
+    );
+    router?.push("/users");
+  }
 
   return (
     <section>
@@ -17,10 +40,9 @@ export default function LoginPage() {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign in to your account
             </h1>
-            {/* <form className="space-y-4 md:space-y-6" action="#"> */}
             <button
-              onClick={LoginHandler}
-              type="submit"
+              onClick={() => signIn("google")}
+              type="button"
               className="w-full text-white bg-[#53c28b] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               <span className="flex items-center justify-center">
@@ -32,28 +54,23 @@ export default function LoginPage() {
                 <span className="text-base">Google Login</span>
               </span>
             </button>
-
-            <button className="w-full text-white bg-[#53c28b] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+            <button
+              onClick={() => {
+                console.log("Metamask Login clicked");
+                // ดำเนินการล็อกอิน Metamask ที่นี่
+              }}
+              type="button"
+              className="w-full text-white bg-[#53c28b] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            >
               <span className="flex items-center justify-center">
                 <Image
                   src={MetamaskIcon}
-                  alt="Google Icon"
+                  alt="Metamask Icon"
                   className="mr-2 h-18 w-6"
                 />
                 <span className="text-base">Metamask Login</span>
               </span>
             </button>
-
-            {/* <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don’t have an account yet?{" "}
-                <a
-                  href="#"
-                  className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >
-                  Sign up
-                </a>
-              </p> */}
-            {/* </form> */}
           </div>
         </div>
       </div>
