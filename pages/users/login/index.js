@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import googleIcon from "../../../components/icons/google-iconlogin.png";
 import MetamaskIcon from "../../../components/icons/Metamaskiconlogin.png";
 import Image from "next/image";
 import { signIn } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/router";
+import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 
 export default function LoginPage() {

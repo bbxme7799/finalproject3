@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export default function Sidebar() {
   const handleSignOut = () => {
-    signOut({ callbackUrl: '/' }) // เรียกใช้ signOut เมื่อมีการคลิกปุ่ม "ออกจากระบบ"
+    signOut({ callbackUrl: "/" }); // เรียกใช้ signOut เมื่อมีการคลิกปุ่ม "ออกจากระบบ"
   };
 
   return (
-    <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
+    <div className="flex flex-col flex-auto flex-shrink-0 antialiased  text-gray-800">
       <div className="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
-        <div className="flex items-center justify-center h-14 border-b">
+        <div className="flex items-center justify-center h-16 border-b">
           <div>MyService</div>
         </div>
         <div className="overflow-y-auto overflow-x-hidden flex-grow">
@@ -23,7 +23,7 @@ export default function Sidebar() {
             </li>
             <li>
               <Link
-                href="/dashboard"
+                href="/users/order"
                 className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
                 <span className="inline-flex justify-center items-center ml-4">
@@ -257,30 +257,30 @@ export default function Sidebar() {
               </Link>
             </li>
             <li>
-              <Link
-                href="#"
+              {/* <Link
+                href="/"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
-              >
-                <span class="inline-flex justify-center items-center ml-4">
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="ml-2 text-sm tracking-wide truncate">
-                  <button onClick={handleSignOut}>ออกจากระบบ</button>
-                </span>
-              </Link>
+              > */}
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                  ></path>
+                </svg>
+              </span>
+              <span class="ml-2 text-sm tracking-wide truncate">
+                <button onClick={handleSignOut}>ออกจากระบบ</button>
+              </span>
+              {/* </Link> */}
             </li>
           </ul>
         </div>

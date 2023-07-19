@@ -3,6 +3,7 @@ import MainHeader from "./main-header";
 import Sidebar from "../../components/layout/sidebar";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import Navbar from "./navbar";
 export default function Layout(props) {
   const { data: session, status } = useSession();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,6 +18,7 @@ export default function Layout(props) {
     <Fragment>
       {/* <div className="container"> */}
       {isLoggedIn && <Sidebar />}
+      {isLoggedIn && <Navbar />}
       {!isLoggedIn && <MainHeader />}
       <main>{props.children}</main>
       {/* </div> */}
