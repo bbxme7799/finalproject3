@@ -1,9 +1,9 @@
 import Image from "next/image";
 export default function Navbar() {
   return (
-    <nav className="shadow">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav className="shadow bg-white fixed w-full z-10">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div className="flex justify-between h-[63px]">
           <div className="flex-shrink-0 flex items-center">
             {/* <Image
               className="hidden lg:block h-8 w-auto"

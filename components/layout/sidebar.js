@@ -7,8 +7,8 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="flex flex-col flex-auto flex-shrink-0 antialiased  text-gray-800">
-      <div className="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
+    <div className="flex flex-col flex-auto flex-shrink-0 antialiased  text-gray-800 ">
+      <div className="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r z-50">
         <div className="flex items-center justify-center h-16 border-b">
           <div>MyService</div>
         </div>
